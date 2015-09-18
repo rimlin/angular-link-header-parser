@@ -1,0 +1,16 @@
+{
+  "name"        : "angular-link-header-parser",
+  "version"     : "1.0.0",
+  "authors"     : [
+    "Ismael Gorissen <ismael.gorissen@gmail.com>"
+  ],
+  "description" : "AngularJS factory that parse Link header and return a JSON object.",
+  "license"     : "MIT",
+  "ignore"      : [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
