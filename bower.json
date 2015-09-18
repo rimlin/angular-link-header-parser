@@ -2,7 +2,10 @@
   "name"        : "angular-link-header-parser",
   "version"     : "1.0.0",
   "authors"     : [
-    "Ismael Gorissen <ismael.gorissen@gmail.com>"
+    {
+      "name" : "Ismael Gorissen",
+      "email": "ismael.gorissen@gmail.com"
+    }
   ],
   "description" : "AngularJS factory that parse Link header and return a JSON object.",
   "license"     : "MIT",
@@ -17,5 +20,18 @@
     "angular" : "~1.4.5",
     "lodash"  : "~3.10.1",
     "uri-util": "~1.1.0"
-  }
+  },
+  "repository"  : {
+    "type": "git",
+    "url" : "https://github.com/igorissen/angular-link-header-parser.git"
+  },
+  "keywords"    : [
+    "headers",
+    "http",
+    "http headers",
+    "link",
+    "link header",
+    "http link header",
+    "parse"
+  ]
 }
