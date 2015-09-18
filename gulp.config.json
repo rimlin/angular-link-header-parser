@@ -1,0 +1,6 @@
+{
+  "release": "./release/",
+  "source" : [
+    "./src/**/*.js"
+  ]
+}
