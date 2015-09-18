@@ -1,7 +1,7 @@
 {
   "private"        : true,
   "name"           : "angular-link-header-parser",
-  "version"        : "1.0.0",
+  "version"        : "1.0.2",
   "description"    : "AngularJS factory that parse Link header and return a JSON object.",
   "scripts"        : {
     "test": "echo \"Error: no test specified\" && exit 1"

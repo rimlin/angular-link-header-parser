@@ -62,3 +62,4 @@ I'm using the `git-flow` process so I have only 2 branches `master` and `develop
 * Merge your changes to `develop`
 * Make a pull request
 
+Please don't forget to update module version in `bower.json` and `package.json`.
