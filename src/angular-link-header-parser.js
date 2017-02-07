@@ -1,3 +1,5 @@
+var URIUtil = require('uri-util');
+
 (function () {
   angular
     .module("ig.linkHeaderParser", [])
