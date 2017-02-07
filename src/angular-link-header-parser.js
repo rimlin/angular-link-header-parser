@@ -6,7 +6,7 @@ var URIUtil = require('uri-util');
     .factory("linkHeaderParser", linkHeaderParser);
 
   /* @ngInject */
-  function linkHeaderParser($log) {
+  function linkHeaderParser() {
     var service = {
       parse: parse
     };
@@ -23,7 +23,6 @@ var URIUtil = require('uri-util');
     function parse(linkHeader) {
       var linkHeaderObject = {};
 
-      $log.debug("Link header: ", linkHeader);
 
       if ( typeof linkHeader !== "string" )
         return new Error("Expected a string as parameter type but received: '" + typeof linkHeader + "'!");
@@ -32,13 +31,11 @@ var URIUtil = require('uri-util');
 
       var links = linkHeader.split(",");
 
-      $log.debug("Links: ", links);
 
       _.forEach(links, function (link) {
         _parseElement(link, linkHeaderObject);
       });
 
-      $log.debug("Object returned: ", linkHeaderObject);
 
       return linkHeaderObject;
     }
@@ -52,14 +49,12 @@ var URIUtil = require('uri-util');
      * @private
      */
     function _parseElement(element, object) {
-      $log.debug("Element to parse: ", element);
 
       var items = element.split(";");
 
       items[ 0 ] = items[ 0 ].trim();
       items[ 1 ] = items[ 1 ].trim();
 
-      $log.debug("Element splitted and trimmed: ", items);
 
       object[ _parseRelElement(items[ 1 ]) ] = _parseURLElement(items[ 0 ]);
     }
@@ -71,14 +66,12 @@ var URIUtil = require('uri-util');
      * @private
      */
     function _parseRelElement(relElement) {
-      $log.debug("REL element to parse: ", relElement);
 
       var items = relElement.split("=");
 
       items[ 1 ] = items[ 1 ].trim().toLowerCase();
       items[ 1 ] = items[ 1 ].replace(/"/g, "");
 
-      $log.debug("Parsed REL element: ", items[ 1 ]);
 
       return items[ 1 ];
     }
@@ -90,7 +83,6 @@ var URIUtil = require('uri-util');
      * @private
      */
     function _parseURLElement(urlElement) {
-      $log.debug("URL element to parse: ", urlElement);
 
       urlElement = urlElement.replace(/^</, "").replace(/>$/, "");
 
@@ -98,7 +90,6 @@ var URIUtil = require('uri-util');
 
       extracted.url = urlElement;
 
-      $log.debug("Extracted data: ", extracted);
 
       return extracted;
     }
